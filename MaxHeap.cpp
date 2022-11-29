@@ -1,3 +1,9 @@
+/*
+Refer: https://youtu.be/HqPJF2L5h9U
+2.6.3 Heap - Heap Sort - Heapify - Priority Queues by Abdul Bari
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -74,7 +80,7 @@ int MaxHeap::del(){
     heap_size--;
     int index=0;
 
-    while(true){
+    while(true){//Actually this method of checking in the downward direction is called heapify method, the other one which we marked as heapify is not called heapify. It's just another method to check from bottom to top. 
         int largest;
         int l;
         int r;
@@ -116,7 +122,7 @@ MaxHeap create(int arr[], int size){
     return heap;
 }
 
-void MaxHeap::maxheapify(int i){
+void MaxHeap::maxheapify(int i){  //this is not actually heapify method check the comment of del() function to understandd
    // printf("Index received=%d\n",i);
     if(i<=0){
         return;
