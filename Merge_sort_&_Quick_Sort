@@ -1,3 +1,15 @@
+/*
+Refer: 
+
+1) https://youtu.be/y_5CFcKkc-8 (29.3 Swap function | swap without extra variable by Sreejith AV)
+2) https://youtu.be/LVmWgba61iM (30.1 Merge Sort by Sreejith AV)
+3) https://youtu.be/MW-dP_Sq2R8 (31.1 Simplified version of Quicksort algorithm | Worst case analysis | Average case analysis by Sreejith AV)
+4) https://youtu.be/1BgA7G6R9BI (31.2 Quicksort algorithm by Sreejith AV)
+
+*/
+
+
+
 int* swap(int* arr, int i1, int i2){   //i1 and i2 are the two indexes to be swapped
    int a=arr[i1];
    arr[i1]=arr[i2];
@@ -126,7 +138,7 @@ void mergeSort(int arr[], int l, int r)
 
         mergeSort(arr, l, m);
         mergeSort(arr, m + 1, r);
- 
+ //keep doing the splitting until we reach size 1 where it returns because l=r so nothing to execute, then it goes on to applying merging function previous recrusive call which is size 2 and so on backwards.
         merge(arr, l, m, r);
     }
 }
