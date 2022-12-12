@@ -1,0 +1,134 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int size;
+
+//Implementation using arrays
+
+//alernate swap function without using an extra variable
+/*
+say int x=20 and int y=30
+so can be implemented using 
+x=x ^ y        //^stands for xor
+y=x ^ y
+x=x ^ y
+
+so it works because 
+x=10101
+y=10110
+
+so after first step i.e. taking xor bitwise(i.e. comparing bit by bit) x becomes 
+x=00011
+now taking xor of y with this x, we get
+y=10101       here we got 20
+and then taking xor of this x i.e. 00011 with the new y we get 
+x=10110
+*/
+
+int* swap(int* arr, int i1, int i2){   //i1 and i2 are the two indexes to be swapped
+   int a=arr[i1];
+   arr[i1]=arr[i2];
+   arr[i2]=a;
+   return arr;
+}
+
+void swap(int &x, int &y)
+{
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+void printArray(int A[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", A[i]);
+    printf("\n");
+}
+ 
+
+
+//insertion sort
+int* insertion_sort(int* arr){
+    
+   for(int i=0; i<size; i++){
+        for(int j=i; j>0; j--){
+            if(arr[j-1]>arr[j]){
+                swap(arr, j-1,j);    //if the element before it is larger then the position would be swapped and after that it would check j-1 and j-2 as assumption of insertion sort was all before were sorted but now that we swapped it we again need to make sure that all are sorted and in this way we would sort all to the desired position
+            } else {
+                break;
+            }
+        }
+    }
+
+   return arr; 
+} 
+
+
+
+
+
+//
+int linear_search_index(int* arr, int start,int end, int value){  //find the index at which the value is located in the array
+    int index;
+    for(int i=start; i<=end;i++){
+        if(arr[i]==value){
+            index=i;
+            break;
+        }
+    }
+    return index;
+}
+
+
+int min(int* arr, int start, int end){  //finds the minimum in the array
+    int minimum=arr[start]; 
+    for(int i=start; i<(end+1); i++){
+        if(arr[i]<minimum){
+            minimum=arr[i];
+        }
+    }
+    return minimum;
+}
+
+
+//selection sort
+int* selection_sort(int* arr, int start, int end){
+
+    if(start==end){
+        return arr;
+    }
+
+    int m1=min(arr, start, end);
+    int index=linear_search_index(arr,start,end, m1);
+
+    swap(arr[start],arr[index]);
+    selection_sort(arr,start+1,end);//recursive step   
+
+
+    return arr;
+
+}
+
+
+
+
+
+//bubble sort
+int* bubble_sort(int* arr, int start, int end){
+    if(start==end){  //base case 
+        return arr;
+    }
+
+    for(int i=1; i<end+1;i++){ 
+        if(arr[i-1]>arr[i]){
+            swap(arr,i-1,i);
+        }
+    } 
+
+    bubble_sort(arr,start,end-1);//recursive step 
+
+    return arr;
+}
+
