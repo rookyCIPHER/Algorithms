@@ -1,3 +1,11 @@
+/*
+1)https://youtu.be/UVxX728JR00 - 28.1 Sorting | Internal vs External | Stable sorting by Sreejith AV
+2)https://youtu.be/ksqYNYYpXOA - 28.2 Insertion Sort by Sreejith AV
+3)https://youtu.be/l6xGWArPJSc - 29.1 Selection Sort by Sreejith AV
+4)https://youtu.be/LqewSyzoTYc - 29.2 Bubble Sort by Sreejith AV
+
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
