@@ -182,3 +182,82 @@ void quickSort(int arr[], int low, int high)
         quickSort(arr, pi + 1, high);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//MY VERSION OF QUICKSORT
+
+/*
+#include<stdio.h>
+#include<stdlib.h>
+
+void swap(int x, int y, int arr[]){
+    int temp=arr[x];
+    arr[x]=arr[y];
+    arr[y]=temp;
+}
+
+void printArray(int arr[],int length){
+        for(int x=0; x<length; x++){
+            printf("%d ", arr[x]);
+        }
+        printf("\n");
+}
+
+void QuickSort(int start, int end, int arr[]){
+
+    if(start<end){
+        int pivot=arr[start];
+        int i=start;
+        int j=end;
+        while(i<j){
+            while(arr[i]<pivot){
+                if((i+1)>end){
+                    break;
+                }
+                i++;
+            }
+            while(arr[j]>=pivot){
+                if((j-1)<start){
+                    break;
+                }
+                j--;
+            }
+            if(i<j){
+                swap(i,j,arr);
+            }
+
+            //pivot as the first element
+        }
+
+        if(i==j){
+             QuickSort(start,j,arr);
+             QuickSort(j+1,end,arr);           
+        } else{
+             QuickSort(start,j,arr);
+             QuickSort(i,end,arr);
+        }
+
+    }
+
+}
+
+
+int main(){
+    int arr[]={1,20,13,45,21,6,7,8};
+    int length=8;
+    QuickSort(0,(length-1),arr);
+    printArray(arr,length);
+    return 0;
+}
+*/
+
