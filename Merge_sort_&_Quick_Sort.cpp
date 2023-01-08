@@ -194,7 +194,7 @@ void quickSort(int arr[], int low, int high)
 
 
 /////////////////////////////////////////////////////////////////////////
-//MY VERSION OF QUICKSORT
+//MY VERSION OF QUICKSORT-Here pivot is only used for comparison but not placed simultaneously
 
 /*
 #include<stdio.h>
@@ -261,3 +261,26 @@ int main(){
 }
 */
 
+/*
+Another Method-Here pivot is placed at correct position simultaneously
+
+void QuickSort(int start, int end, int* arr){
+
+    if(start<end){
+        counter+=1;
+        int pivot=arr[start];
+        int j =end;
+
+        for(int i=end;i>start;i--){
+            if(arr[i]>pivot){
+                swap(i,j,arr);
+                j--;
+            }
+        }
+        swap(start,j,arr);
+        QuickSort(start,j-1,arr);
+        QuickSort(j+1,end,arr);
+
+    } 
+   )
+*/
